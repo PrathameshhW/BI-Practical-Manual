@@ -1,0 +1,31 @@
+
+select [Measures].[Sales Time Alt Key] on columns
+from [Sales DW]
+
+
+select [Measures].[Quantity] on columns
+from [Sales DW]
+
+
+
+select [Measures].[Sales Invoice Number] on columns
+from [Sales DW]
+
+
+select [Measures].[Sales Total Cost] on columns
+from [Sales DW]
+
+select [Measures].[Sales Total Cost] on columns
+, [Dim Date].[Year].[Year] on rows
+from [Sales DW]
+
+select [Measures].[Sales Total Cost] on columns
+, NONEMPTY({[Dim Date].[Year].[Year]}) on rows
+from [Sales DW]
+
+
+select [Measures].[Sales Total Cost] on columns
+from [Sales DW]
+Where [Dim Date].[Year].[Year].&[2013]
+
+
