@@ -1,0 +1,65 @@
+The Logistic Regression is a regression model in which the response variable (dependent variable) has categorical values such as True/False or 0/1. It actually measures the probability of a binary response as the value of response variable based on the mathematical equation relating it with the predictor variables.
+
+The general mathematical equation for logistic regression is -
+
+y = 1/(1+e^-(a+b1x1+b2x2+b3x3+...))
+Following is the description of the parameters used -
+
+y is the response variable.
+
+x is the predictor variable.
+
+a and b are the coefficients which are numeric constants.
+
+The function used to create the regression model is the glm() function.
+
+Syntax
+The basic syntax for glm() function in logistic regression is -
+
+glm(formula,data,family)
+Following is the description of the parameters used -
+
+formula is the symbol presenting the relationship between the variables.
+
+data is the data set giving the values of these variables.
+
+family is R object to specify the details of the model. It's value is binomial for logistic regression.
+
+
+Example
+The in-built data set "mtcars" describes different models of a car with their various engine specifications. In "mtcars" data set, the transmission mode (automatic or manual) is described by the column am which is a binary value (0 or 1). We can create a logistic regression model between the columns "am" and 3 other columns - hp, wt and cyl.
+
+
+_____________________________________________________
+# Select some columns form mtcars.
+input <- mtcars[,c("am","cyl","hp","wt")]
+
+print(head(input))
+input <- mtcars[,c("am","cyl","hp","wt")]
+
+am.data = glm(formula = am ~ cyl + hp + wt, data = input, family = binomial)
+
+print(summary(am.data))
+
+
+______________________in<-________________________________
+
+
+
+Example 1
+
+Problem Statement:
+
+Solve the logistic regression of the following problem Rizatriptan for Migraine
+
+Response - Complete Pain Relief at 2 hours (Yes/No).
+
+Predictor - Dose (mg): Placebo (0), 2.5,5,10
+
+
+Dose	#Patients	#Relieved	%Relieved
+0	67	2	3.0
+2.5	75	7	9.3
+5	130	29	22.3
+10	145	40	27.6
+
